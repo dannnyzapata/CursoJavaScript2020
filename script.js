@@ -1,4 +1,2 @@
-function fechahora(){
-    document.getElementById('demo').innerHTML = Date();
-
-}
+alert('Hola Mundo');
+console.log("Hola bebé");
