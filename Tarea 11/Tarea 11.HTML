@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Tarea 11</title>
+	
+    </head>
+    <header>Tarea 11: Funciones de Array </header>
+    <br /> 
+        <body>
+		La funcion Map aplica una funcion a todos los elementos dentro del arreglo, en esta caso raiz cuadrada de los numeros
+		 <br /> 
+		 4, 9, 16 y 25
+		 <br /> 
+		<button onclick="Mapa()">Map</button>
+
+		<p id="mapas"></p>
+		<script>
+			var numbers = [4, 9, 16, 25];
+
+			const Mapa = () => {
+			x = document.getElementById("mapas")
+			x.innerHTML = numbers.map(Math.sqrt);
+		}
+</script>	
+	La funcion Filter te permite aplicar una condición a todos los elementos de un arreglo, en esta caso ver cuales numeros 
+	  <br /> 
+	 de los siguientes son mayores a 18
+	  <br /> 
+	  los numeros son 32, 33, 16 y 40
+	  
+	  <br /> 
+	  <button onclick="PonerHTML()">Filter</button>
+	  <br /> 
+	  <p id="Filtros"></p>
+
+	<script>
+	var mayora = [32, 33, 16, 40];
+
+	const mayor18 = (mayora) => {
+		return mayora >= 18;
+	}
+
+	const PonerHTML = () => {
+		document.getElementById("Filtros").innerHTML = mayora.filter(mayor18);
+	}
+	</script>  		
+	 <br />
+	La funcion Reduce vuelve a todo el contenido de un arreglo en un solo valor, para despues ejecutar una funcion que se aplicara de izquiera a derecha acumulado en un total.
+	 <br />
+	 en este ejemplo, restamos los valores, empezando desde el primer numero 175 y pasando por 50 y 25
+	 
+	 <p id="Reduce"></p>
+	 <br /> 
+	<script> 
+		var numbers = [175, 50, 25];
+		document.getElementById("Reduce").innerHTML = numbers.reduce(myFunc);
+		function myFunc(total, num) {
+		return total - num;
+		}	 
+	</script>	
+		
+    </body>
+</html>
