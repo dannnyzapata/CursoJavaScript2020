@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8">
+    <title>Tarea 19 </title>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <style>
+        .max-width-50 {
+            max-width: 50rem;
+        }
+    </style>
+</head>
+    <body>
+        <h2 class="text-center">Ejercicio 19</h2>
+        <ul id="posts" class="list-group max-width-50 mx-auto">
+
+        </ul>
+
+        <script>
+            const displayPosts = async() => {
+                var content = await fetch('https://jsonplaceholder.typicode.com/posts');
+                var json = await content.json();
+                var posts = document.getElementById("posts");
+                json.forEach(element => posts.innerHTML += `<li class="list-group-item"> <p> <a href="detalle.html?id=${element.id}">${element.id} </a>${element.title}</p>  </li>`); 
+            }
+
+            displayPosts();
+        </script>
+    </body>
+</html>
+
